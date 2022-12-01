@@ -40,7 +40,7 @@ fp AS -- Get first pageview for each session
     JOIN fp ON
     fp.session_id = ch.session_id
     AND fp.pv = ch.agent_day_session_pageview_index
-    WHERE ch.object_id = 'HOME'
+    WHERE ch.object_id = 'HOME' AND user_type_1 IS NOT NULL
     GROUP BY 1,3
     ORDER BY 1 ASC, 3 ASC
     ;
